@@ -1,4 +1,4 @@
-package com.kironstylo.notetakingapp.feature_note.presentation.notes.Components
+package com.kironstylo.notetakingapp.feature_note.presentation.notes.components
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
