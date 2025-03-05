@@ -1,15 +1,13 @@
-package com.kironstylo.notetakingapp.feature_note.presentation.notes.Components
+package com.kironstylo.notetakingapp.feature_note.presentation.notes.components
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.kironstylo.notetakingapp.feature_note.domain.model.Note
 import com.kironstylo.notetakingapp.feature_note.domain.util.NoteOrder
 import com.kironstylo.notetakingapp.feature_note.domain.util.OrderType
 
