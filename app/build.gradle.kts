@@ -2,13 +2,13 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    id("kotlin-kapt")
+    id("com.google.devtools.ksp")
     id("com.google.dagger.hilt.android")
 }
 
 android {
     namespace = "com.kironstylo.notetakingapp"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.kironstylo.notetakingapp"
@@ -41,9 +41,6 @@ android {
     }
 }
 
-kapt {
-    correctErrorTypes = true
-}
 
 dependencies {
 
@@ -69,11 +66,11 @@ dependencies {
 
     // Dagger-Hilt
     implementation(libs.dagger.hilt)
-    kapt(libs.dagger.hilt.compiler)
+    ksp(libs.dagger.hilt.compiler)
 
     // Room
     implementation(libs.room)
-    kapt(libs.room.compiler)
+    ksp(libs.room.compiler)
 
     // Kotlin Extensions for Room
     implementation(libs.room.coroutines)
