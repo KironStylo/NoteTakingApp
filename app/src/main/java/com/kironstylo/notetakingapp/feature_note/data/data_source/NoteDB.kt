@@ -7,7 +7,8 @@ import com.kironstylo.notetakingapp.feature_note.domain.model.Note
 
 @Database(
     entities = [Note::class],
-    version = 1
+    version = 1,
+    exportSchema = false
 
 )
 abstract class NoteDB : RoomDatabase() {
