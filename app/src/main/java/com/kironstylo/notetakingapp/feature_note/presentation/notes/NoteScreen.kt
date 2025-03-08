@@ -41,6 +41,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.kironstylo.notetakingapp.feature_note.presentation.notes.components.NoteItem
 import com.kironstylo.notetakingapp.feature_note.presentation.notes.components.OrderSection
+import com.kironstylo.notetakingapp.feature_note.presentation.util.Screen
 import kotlinx.coroutines.launch
 
 @Composable
@@ -55,7 +56,9 @@ fun NoteScreen(
         snackbarHost = {SnackbarHost(hostState = snackbarHostState)},
         floatingActionButton = {
             FloatingActionButton(
-                onClick = {},
+                onClick = {
+                    navController.navigate(Screen.AddEditNoteScreen.route)
+                },
                 containerColor = MaterialTheme.colorScheme.primary
             ) {
                 Icon(imageVector = Icons.Default.Add, contentDescription = "Add note")
@@ -64,8 +67,9 @@ fun NoteScreen(
     ) { innerPadding ->
         Column(
             Modifier
-                .fillMaxSize()
                 .padding(innerPadding)
+                .fillMaxSize()
+                
         ) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -109,7 +113,10 @@ fun NoteScreen(
                         modifier = Modifier
                             .fillMaxWidth()
                             .clickable {
-
+                                navController.navigate(
+                                    Screen.AddEditNoteScreen.route +
+                                    "?noteId=${note.id}&noteColor=${note.color}"
+                                )
                             },
                     ){
                         viewModel.onEvent(NoteEvent.DeleteNote(note))
